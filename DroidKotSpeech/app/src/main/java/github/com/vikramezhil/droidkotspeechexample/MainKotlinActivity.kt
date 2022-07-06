@@ -2,11 +2,11 @@ package github.com.vikramezhil.droidkotspeechexample
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import github.com.vikramezhil.dks.speech.Dks
 import github.com.vikramezhil.dks.speech.DksListener
-import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * Droid Kotlin Speech Example Activity
@@ -51,7 +51,8 @@ class MainKotlinActivity : AppCompatActivity() {
         dks.injectProgressView(R.layout.layout_pv_inject)
         dks.oneStepResultVerify = true
 
-        btn_start_dks.setOnClickListener {
+        val view: Button = findViewById(R.id.btn_start_dks)
+        view.setOnClickListener {
             dks.startSpeechRecognition()
         }
     }
